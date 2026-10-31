@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marwadi University | Rajkot</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #fff;
+    line-height: 1.6;
+}
+
+/* Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5%;
+    min-height: 85px;
+}
+
+.logo img {
+    height: 30px;
+    max-width: 100%;
+    position:absolute;
+    top:10px;
+}
+
+.top-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 15px;
+}
+
+.top-links a:hover {
+    color: #008eaa;
+}
+
+/* Navigation */
+nav {
+    background: #102f4c;
+    padding: 13px 5%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #31c2d0;
+}
+
+/* Banner */
+.hero {
+    height: 360px;
+    background:
+        linear-gradient(to right, #102f4ccc, transparent),
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTAZVF43JIZ6KDgg_h3nGBWJ0ksQ3UhQCPrvbh2P39qA&s")
+        center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 40px 6%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 600;
+}
+
+.hero h2 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 22px;
+}
+
+.btn {
+    display: inline-block;
+    background: #17b6c5;
+    color: #102f4c;
+    text-decoration: none;
+    padding: 9px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+}
+
+/* Common Section */
+.container {
+    width: 92%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px 0;
+}
+
+.section-title {
+    font-size: 23px;
+    color: #102f4c;
+    margin-bottom: 17px;
+    font-weight: 600;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: #16b7c5;
+    margin-top: 5px;
+}
+
+/* About */
+.about {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.about img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+/* Information Section */
+.information {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-column {
+    padding: 10px 15px;
+    border-right: 1px solid #ddd;
+}
+
+.info-column:last-child {
+    border-right: none;
+}
+
+.outcome {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 13px 0;
+    font-size: 14px;
+}
+
+.po {
+    color: #102f4c;
+    background: #d9f2f4;
+    padding: 5px 9px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.course {
+    background: #f3f5f6;
+    text-align: center;
+    padding: 15px 7px;
+    border: 1px solid #e5e5e5;
+}
+
+.course h3 {
+    font-size: 13px;
+    color: #173d60;
+    margin-top: 8px;
+}
+
+.course-icon {
+    font-size: 27px;
+    color: #24547a;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.small-btn {
+    display: block;
+    width: fit-content;
+    margin: 15px auto 0;
+    padding: 8px 17px;
+    background: #102f4c;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* Gallery and Recruiters */
+.bottom-section {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 115px;
+    object-fit: cover;
+}
+
+.recruiters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.recruiter {
+    border: 1px solid #e1e1e1;
+    background: #fafafa;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #24547a;
+}
+
+/* Hostel */
+.hostel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    border-top: 1px solid #ddd;
+}
+
+.hostel img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.hostel p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background: #102f4c;
+    color: white;
+    padding: 30px 5% 15px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.footer-content h3 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.copyright {
+    border-top: 1px solid #526779;
+    margin-top: 22px;
+    padding-top: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-links a {
+        margin: 5px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .about,
+    .information,
+    .bottom-section,
+    .hostel {
+        grid-template-columns: 1fr;
+    }
+
+    .info-column {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 450px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recruiters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<!-- <header class="top-header">
+
+    <div class="logo">
+        <img src="https://cdn.marwadiuniversity.ac.in:553/images/logo-header.png"
+        alt="Marwadi University">
+        
+    </div>
+
+    <div class="top-links">
+        <a href="#">Student Login</a> |
+        <a href="#">Faculty Login</a> |
+        <a href="#">Alumni</a> |
+        <a href="#contact">Contact Us</a>
+    </div>
+
+</header> -->
+
+<!-- Navigation -->
+<nav>
+        <div class="logo">
+        <img src="https://cdn.marwadiuniversity.ac.in:553/images/logo-header.png"
+        alt="Marwadi University">
+        
+    </div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#courses">Academics</a></li>
+        <li><a href="#hostel">Campus Life</a></li>
+        <li><a href="#recruiters">Placements</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Marwadi University</h1>
+        <h2>Empowering Minds, Shaping Futures</h2>
+
+        <p>
+            A place where learning meets innovation,
+            and students grow into future-ready professionals.
+        </p>
+
+        <a href="#about" class="btn">Explore More →</a>
+    </div>
+</section>
+
+<!-- About -->
+<section class="container about" id="about">
+
+    <div>
+        <h2 class="section-title">About Our University</h2>
+
+        <p>
+            Marwadi University is a premier institution known for
+            academic excellence, innovation and holistic development.
+            We aim to empower students with the knowledge and skills
+            to lead in a dynamic world.
+        </p>
+
+        <br>
+        <a href="#" class="small-btn">Know More →</a>
+    </div>
+
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTAZVF43JIZ6KDgg_h3nGBWJ0ksQ3UhQCPrvbh2P39qA&s"
+        alt="Marwadi University campus">
+    </div>
+
+</section>
+
+<!-- Outcomes and Courses -->
+<section class="container information">
+
+    <div class="info-column">
+        <h2 class="section-title">Program Outcomes (POs)</h2>
+
+        <div class="outcome">
+            <span class="po">PO1</span>
+            Engineering Knowledge & Problem Solving
+        </div>
+
+        <div class="outcome">
+            <span class="po">PO2</span>
+            Design and Development of Solutions
+        </div>
+
+        <div class="outcome">
+            <span class="po">PO3</span>
+            Ethics and Professional Responsibility
+        </div>
+
+        <div class="outcome">
+            <span class="po">PO4</span>
+            Lifelong Learning
+        </div>
+    </div>
+
+    <div class="info-column" id="courses">
+        <h2 class="section-title">Courses Offered</h2>
+
+        <div class="course-grid">
+            <div class="course">
+                <div class="course-icon">⚙</div>
+                <h3>Faculty of Engineering</h3>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">♟</div>
+                <h3>Faculty of Management</h3>
+            </div>
+
+            <div class="course">
+                <div class="course-icon">⚗</div>
+                <h3>Faculty of Science</h3>
+            </div>
+        </div>
+
+        <a href="#" class="small-btn">View All Courses →</a>
+    </div>
+
+    <div class="info-column">
+        <h2 class="section-title">Our Campus</h2>
+
+        <p>
+            A learning environment that encourages academic,
+            personal and professional growth through education
+            and campus activities.
+        </p>
+    </div>
+
+</section>
+
+<!-- Gallery and Recruiters -->
+<section class="container bottom-section" id="gallery">
+
+    <div>
+        <h2 class="section-title">Campus & Event Gallery</h2>
+
+        <div class="gallery">
+            <img src="https://www.collegebatch.com/static/clg-gallery/marwadi-university-rajkot-325314.webp" alt="University event">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHps4tNzwZc2htx2RXZ8uLWN0vt2MERCLzPG9bSeB_PNLfKuYJ9ZMsilo&s" alt="University ground">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPUhSKfVkt9Hqccyvbd3WJRSttUqxkse7MMJXLoCWtSw&s" alt="Campus building">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBOEOT81z4bTpasVy_9VXEwkJ2SzAbvtifgdWq-GM58w&s=10" alt="Sports event">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkH7dFjq8Kw8K-yyMpCpr6tGHAcaAmWR11r5hhO48_nw&s=10" alt="University seminar">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP-XR502rAsVe8pMTemiLuMkutZh9z773S77AP5Zz_zw&s=10" alt="University event">
+        </div>
+
+        <a href="#" class="small-btn">View Gallery →</a>
+    </div>
+
+    <div id="recruiters">
+        <h2 class="section-title">Our Recruiters</h2>
+
+        <div class="recruiters">
+            <div class="recruiter">TCS</div>
+            <div class="recruiter">Infosys</div>
+            <div class="recruiter">Wipro</div>
+            <div class="recruiter">Amazon</div>
+            <div class="recruiter">IBM</div>
+            <div class="recruiter">Reliance</div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Hostel -->
+<section class="container hostel" id="hostel">
+
+    <div>
+        <h2 class="section-title">Hostel & Campus Life</h2>
+
+        <p>
+            University life goes beyond classrooms. Students can
+            participate in sports, cultural programmes and various
+            campus activities while experiencing university life.
+        </p>
+
+        <br>
+        <a href="#gallery" class="small-btn">Explore Campus →</a>
+    </div>
+
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnXgMUl5HsbUvd5xKG2ireBIj5L_B5sw6GVoiri5nYEQ&s=10"
+        alt="University hostel">
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+
+    <div class="footer-content">
+
+        <div>
+            <h2>Marwadi University</h2>
+            <p>Empowering Minds, Shaping Futures</p>
+        </div>
+
+        <div>
+            <h3>Address</h3>
+            <p>
+                Rajkot - Morbi Highway,<br>
+                Rajkot, Gujarat - 360003
+            </p>
+        </div>
+
+        <div>
+            <h3>Contact Us</h3>
+            <p>+91 *****70117 || mu@marwadiuniversity.ac.in</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 Marwadi University. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+</body>
+</html>
